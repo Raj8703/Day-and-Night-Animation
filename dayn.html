@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Sun and moon animation</title>
+    </head>
+    <style>
+        body{
+            background-image: url(day.jpg);
+            animation: night 15s;
+
+            background-size: 100%;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes night {
+            100% {
+                background-image: url(night.jpg);
+            }
+        }
+
+        .sun-moon {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-image: url(sun.png);
+            background-size: 100%;
+            animation: daynight 15s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            position: relative;
+        }
+        @keyframes daynight {
+            0% {
+                top:0px;
+                left: 90%;
+            }
+            50% {
+                top: 0%;
+                left: 85%;
+                opacity: 0;
+            }
+            51% {
+                top: 0px;
+                left: 85%;
+                opacity: 0;
+            }
+            100% {
+                left: 85%;
+                background-image: url(moon.png);
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="sun-moon"></div>
+    </body>
+</html>
